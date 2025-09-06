@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Play Monster Survivors Online — Free Browser Game</title>
+  <meta name="description" content="Play Monster Survivors online in your browser. Fast-loading, mobile-friendly 16:9 iframe to enjoy the Unity build of Monster Survivors on desktop and mobile." />
+  <link rel="canonical" href="https://yourdomain.com" />
+  <meta name="robots" content="index, follow" />
+  <!-- Open Graph (optional but SEO-friendly) -->
+  <meta property="og:title" content="Play Monster Survivors Online" />
+  <meta property="og:description" content="Play Monster Survivors online in your browser. Fast-loading, mobile-friendly 16:9 iframe to enjoy the Unity build of Monster Survivors on desktop and mobile." />
+  <meta property="og:type" content="game" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:site_name" content="Monster Survivors" />
+
+  <!-- Tailwind CDN for quick styling (you can remove if you build with your own Tailwind pipeline) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Ensure smooth scroll for the Start Game button */
+    html { scroll-behavior: smooth; }
+
+    /* Classic 16:9 responsive iframe wrapper (works without aspect-ratio support) */
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 ratio */
+      overflow: hidden;
+      border-radius: 0.75rem; /* match button rounded feel */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      background: #000; /* visible while iframe loads */
+    }
+    .iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Small accessibility focus style for the iframe container when jumped to */
+    .iframe-wrapper:focus {
+      outline: 3px solid rgba(59,130,246,0.5);
+      outline-offset: 4px;
+    }
+
+    /* Make sure the "Start Game" button stands out on mobile */
+    @media (max-width: 640px) {
+      .start-btn { padding-left: 1rem; padding-right: 1rem; }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-100 text-gray-900 flex items-center justify-center">
+  <main class="w-full max-w-4xl px-6 py-12">
+    <header class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-3">Play Monster Survivors Online</h1>
+      <p class="text-gray-600 text-sm sm:text-base">
+        Jump into Monster Survivors — a fast-paced action roguelike you can play right in your browser. No download required.
+      </p>
+    </header>
+
+    <section class="flex flex-col items-center gap-6">
+      <!-- Start Game button -->
+      <button
+        id="startGameBtn"
+        class="start-btn inline-block bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 hover:scale-105 transform transition focus:outline-none focus:ring-4 focus:ring-blue-300"
+        aria-label="Start Monster Survivors — jump to game"
+        title="Start Game"
+      >
+        Start Game
+      </button>
+
+      <!-- Note / fallback link -->
+      <p class="text-sm text-gray-500">If the game doesn't load, <a href="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html" target="_blank" rel="noopener noreferrer" class="underline">open the game in a new tab</a>.</p>
+
+      <!-- Responsive iframe container -->
+      <div id="game" class="iframe-wrapper w-full mt-2" tabindex="-1" aria-label="Monster Survivors game frame">
+        <iframe
+          src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html"
+          title="Monster Survivors - Play in browser"
+          allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-presentation"
+        ></iframe>
+      </div>
+    </section>
+
+    <footer class="mt-8 text-center text-xs text-gray-500">
+      <p>© <span id="year"></span> Monster Survivors — Play in your browser. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script>
+    // Fill current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll to iframe and focus it when Start Game clicked
+    document.getElementById('startGameBtn').addEventListener('click', function (e) {
+      const gameEl = document.getElementById('game');
+      if (!gameEl) return;
+      // scrollIntoView with offset-friendly behavior
+      gameEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // After short delay, set focus for keyboard users (delay matches scroll duration)
+      setTimeout(() => {
+        gameEl.focus({ preventScroll: true });
+        // If iframe exists, also try to focus the iframe element itself for better UX
+        const iframe = gameEl.querySelector('iframe');
+        if (iframe && iframe.tabIndex === -1) iframe.tabIndex = 0;
+        if (iframe) iframe.focus();
+      }, 500);
+    });
+  </script>
+</body>
+</html>
