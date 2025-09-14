@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://promax.it.com/sitemap.xml
