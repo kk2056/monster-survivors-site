@@ -1,61 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- SEO 信息 -->
-  <title>Play Monster Survivors — Free Online Game | promax.it.com</title>
-  <meta name="description" content="Play Monster Survivors online for free at promax.it.com. Survive waves of enemies, test your skills, and enjoy this fast-paced browser game instantly." />
-  <meta name="keywords" content="Monster Survivors, online game, free browser game, survival game, play free, promax.it.com" />
-  <link rel="canonical" href="https://promax.it.com/" />
-
-  <!-- Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-J8GHJM9XN5');
-  </script>
-
-  <!-- 样式 -->
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; background:#f9fafb; color:#222; }
-    header { text-align:center; padding:40px 20px; }
-    h1 { font-size:2rem; margin-bottom:15px; }
-    p { font-size:1rem; color:#444; margin:10px auto; max-width:600px; }
-    .btn {
-      display:inline-block; margin-top:20px; padding:14px 28px;
-      background:#ff5722; color:white; font-size:1rem; font-weight:bold;
-      border-radius:10px; text-decoration:none;
-      transition: background 0.3s;
-    }
-    .btn:hover { background:#e64a19; }
-    main { display:flex; justify-content:center; padding:20px; }
-    iframe {
-      width:100%; max-width:900px;
-      aspect-ratio:16/9; border:none; border-radius:8px;
-    }
-    @media(max-width:600px){
-      h1 { font-size:1.5rem; }
-      p { font-size:0.95rem; }
-      .btn { font-size:0.9rem; padding:12px 20px; }
-    }
-  </style>
-</head>
-<body>
-  <!-- 页眉 -->
-  <header>
-    <h1>Play Monster Survivors Online</h1>
-    <p>Survive endless waves of monsters and test your skills in this fast-paced browser survival game. No download required — play instantly for free!</p>
-    <a href="#game" class="btn">Start Game</a>
-  </header>
-
-  <!-- 游戏区 -->
-  <main id="game">
-    <iframe src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html" 
-            title="Monster Survivors Game" allowfullscreen></iframe>
-  </main>
-</body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://promax.it.com/</loc>
+    <lastmod>2025-09-14</lastmod>
+    <priority>1.0</priority>
+  </url>
+</urlset>
