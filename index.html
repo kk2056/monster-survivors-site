@@ -1,52 +1,453 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Max Online Games - Free Fun Games & More</title>
+    <meta name="description" content="Play pro-level HTML5 games like Sudoku, Tetris, and more for free at ProMax!">
+    <meta name="keywords" content="online games, free games, HTML5 games, pro games, monster survivors, sudoku, tetris, puzzle games, action games">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://promax.it.com/">
 
-  <!-- SEO 信息 -->
-  <title>Play Monster Survivors — Free Online Game</title>
-  <meta name="description" content="Play Monster Survivors online for free. Survive waves of enemies, test your skills, and enjoy this fast-paced browser game instantly." />
-  <meta name="keywords" content="Monster Survivors, online game, free browser game, survival game, play free" />
-  <link rel="canonical" href="https://yourdomain.com" />
+    <!-- AdSense 主脚本 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9774042341049510" crossorigin="anonymous"></script>
 
-  <!-- 样式 -->
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; background:#f9fafb; color:#222; }
-    header { text-align:center; padding:40px 20px; }
-    h1 { font-size:2rem; margin-bottom:15px; }
-    p { font-size:1rem; color:#444; margin:10px auto; max-width:600px; }
-    .btn {
-      display:inline-block; margin-top:20px; padding:14px 28px;
-      background:#ff5722; color:white; font-size:1rem; font-weight:bold;
-      border-radius:10px; text-decoration:none;
-      transition: background 0.3s;
-    }
-    .btn:hover { background:#e64a19; }
-    main { display:flex; justify-content:center; padding:20px; }
-    iframe {
-      width:100%; max-width:900px;
-      aspect-ratio:16/9; border:none; border-radius:8px;
-    }
-    @media(max-width:600px){
-      h1 { font-size:1.5rem; }
-      p { font-size:0.95rem; }
-      .btn { font-size:0.9rem; padding:12px 20px; }
-    }
-  </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #718096;
+            margin-bottom: 20px;
+        }
+
+        /* 顶部横幅广告样式 */
+        .top-banner-ad {
+            text-align: center;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 8px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad-fallback {
+            background: #f0f0f0;
+            color: #666;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            width: 100%;
+            height: 420px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .game-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .game-title {
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .game-content {
+            padding: 20px;
+            height: calc(100% - 55px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-description {
+            color: #4a5568;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            font-size: 0.95rem;
+            flex-grow: 0;
+        }
+
+        .game-frame {
+            width: 100%;
+            height: 280px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background: #f8f9fa;
+            flex-grow: 1;
+        }
+
+        .game-thumbnail {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .play-button-container {
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .play-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .play-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+            background: linear-gradient(45deg, #7c3aed, #6d28d9);
+        }
+
+        .new-tab-notice {
+            text-align: center;
+            margin-top: 10px;
+            color: #718096;
+            font-size: 0.85rem;
+        }
+
+        /* 底部侧边广告样式 - 隐藏白色框 */
+        .bottom-ad-section {
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            margin-top: 40px;
+            color: #4a5568;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* 错误和加载状态样式 */
+        .loading-placeholder {
+            background: #f0f0f0;
+            color: #666;
+            padding: 40px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .game-card {
+                height: 380px;
+            }
+
+            .game-frame {
+                height: 220px;
+            }
+
+            .game-thumbnail {
+                height: 140px;
+                font-size: 2.5rem;
+            }
+
+            .top-banner-ad {
+                margin: 10px 0;
+            }
+
+            .play-button {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+
+            .side-ad {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .game-card {
+                height: 340px;
+            }
+
+            .game-frame {
+                height: 180px;
+            }
+
+            .game-thumbnail {
+                height: 120px;
+                font-size: 2rem;
+            }
+
+            .play-button {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .game-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- 页眉 -->
-  <header>
-    <h1>Play Monster Survivors Online</h1>
-    <p>Survive endless waves of monsters and test your skills in this fast-paced browser survival game. No download required — play instantly for free!</p>
-    <a href="#game" class="btn">Start Game</a>
-  </header>
+    <div class="container">
+        <header>
+            <h1>🎮 Pro Max Online Games</h1>
+            <p class="subtitle">Play the best HTML5 games online for free - No download required!</p>
+        </header>
 
-  <!-- 游戏区 -->
-  <main id="game">
-    <iframe src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html" 
-            title="Monster Survivors Game" allowfullscreen></iframe>
-  </main>
+        <!-- 顶部横幅广告 -->
+        <div class="top-banner-ad">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9774042341049510"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <noscript>
+                <div class="ad-fallback">Advertisement - Please enable JavaScript</div>
+            </noscript>
+        </div>
+
+        <main>
+            <div class="games-grid">
+                <!-- 游戏1: Monster Survivors (iframe) -->
+                <div class="game-card">
+                    <div class="game-header">
+                        <h2 class="game-title">🔥 Monster Survivors</h2>
+                    </div>
+                    <div class="game-content">
+                        <p class="game-description">Survive endless waves of monsters in this fast-paced action game!</p>
+                        <iframe src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html"
+                                class="game-frame"
+                                title="Monster Survivors Game"
+                                allowfullscreen
+                                loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- 游戏2: Sudoku Master (iframe) -->
+                <div class="game-card">
+                    <div class="game-header">
+                        <h2 class="game-title">🧩 Sudoku Master</h2>
+                    </div>
+                    <div class="game-content">
+                        <p class="game-description">Challenge your mind with the classic Sudoku puzzle!</p>
+                        <iframe src="https://htmlgames.com/game/Sudoku"
+                                class="game-frame"
+                                title="Sudoku Master Game"
+                                allowfullscreen
+                                loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- 游戏3: Tetris Classic (iframe) -->
+                <div class="game-card">
+                    <div class="game-header">
+                        <h2 class="game-title">🎯 Tetris Classic</h2>
+                    </div>
+                    <div class="game-content">
+                        <p class="game-description">The timeless block-stacking puzzle game!</p>
+                        <iframe src="https://tetris.com/play-tetris"
+                                class="game-frame"
+                                title="Tetris Classic Game"
+                                allowfullscreen
+                                loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- 游戏4: Snake Game (链接) -->
+                <div class="game-card">
+                    <div class="game-header">
+                        <h2 class="game-title">🐍 Snake Game</h2>
+                    </div>
+                    <div class="game-content">
+                        <p class="game-description">The legendary Snake game! Guide your snake and grow longer!</p>
+                        <div class="game-thumbnail">🐍</div>
+                        <div class="play-button-container">
+                            <a href="https://playsnake.org/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="play-button">🎮 Play Now</a>
+                        </div>
+                        <p class="new-tab-notice">Opens in new tab</p>
+                    </div>
+                </div>
+
+                <!-- 游戏5: Solitaire (链接) -->
+                <div class="game-card">
+                    <div class="game-header">
+                        <h2 class="game-title">♠️ Solitaire</h2>
+                    </div>
+                    <div class="game-content">
+                        <p class="game-description">Classic card game perfection! Test your skills!</p>
+                        <div class="game-thumbnail">♠️</div>
+                        <div class="play-button-container">
+                            <a href="https://www.crazygames.com/solitaire"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="play-button">🎮 Play Now</a>
+                        </div>
+                        <p class="new-tab-notice">Opens in new tab</p>
+                    </div>
+                </div>
+
+    
+                <!-- 游戏6: Chess Online (链接) -->
+                <div class="game-card">
+                    <div class="game-header">
+                        <h2 class="game-title">♟️ Chess Online</h2>
+                    </div>
+                    <div class="game-content">
+                        <p class="game-description">The king of strategy games! Play chess against AI or friends!</p>
+                        <div class="game-thumbnail">♟️</div>
+                        <div class="play-button-container">
+                            <a href="https://www.chess.com/play/online"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="play-button">🎮 Play Now</a>
+                        </div>
+                        <p class="new-tab-notice">Opens in new tab</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 底部侧边广告 -->
+        <div class="bottom-ad-section">
+            <div class="side-ad">
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:250px"
+                     data-ad-client="ca-pub-9774042341049510"
+                     data-ad-slot="0987654321"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <noscript>
+                    <div class="ad-fallback">Advertisement - Please enable JavaScript</div>
+                </noscript>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Pro Max Online Games. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
