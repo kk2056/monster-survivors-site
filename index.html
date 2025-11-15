@@ -3,14 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro Max Online Games - Free Fun Games & More</title>
-    <meta name="description" content="Play pro-level HTML5 games like Sudoku, Tetris, and more for free at ProMax!">
-    <meta name="keywords" content="online games, free games, HTML5 games, pro games, monster survivors, sudoku, tetris, puzzle games, action games">
+    <title>Pro Max Games - Free HTML5 Fun 2025</title>
+    <meta name="description" content="Play pro max online games for free! Best HTML5 games 2025 including Sudoku, Tetris, puzzle games & action games. No download required, instant play!">
+    <meta name="keywords" content="pro max online games, free html5 sudoku 2025, tetris pro max, snake game free, solitaire online pro">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://promax.it.com/">
 
     <!-- AdSense 主脚本 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9774042341049510" crossorigin="anonymous"></script>
+
+    <!-- 结构化数据 - JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Pro Max Games",
+        "url": "https://promax.it.com/",
+        "description": "Play pro max online games for free! Best HTML5 games 2025 including Sudoku, Tetris, puzzle games & action games. No download required, instant play!",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://promax.it.com/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Pro Max Games",
+            "url": "https://promax.it.com/"
+        }
+    }
+    </script>
 
     <style>
         * {
@@ -78,9 +99,10 @@
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin: 30px 0;
+            justify-items: center;
         }
 
         .game-card {
@@ -89,8 +111,9 @@
             padding: 0;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
-            width: 100%;
-            height: 420px;
+            width: 300px;
+            min-height: 420px;
+            max-height: 520px;
             overflow: hidden;
             position: relative;
         }
@@ -118,19 +141,22 @@
             height: calc(100% - 55px);
             display: flex;
             flex-direction: column;
+            overflow: auto;
         }
 
         .game-description {
             color: #4a5568;
             margin-bottom: 15px;
-            line-height: 1.4;
-            font-size: 0.95rem;
+            line-height: 1.5;
+            font-size: 0.9rem;
             flex-grow: 0;
+            max-height: 120px;
+            overflow-y: auto;
         }
 
         .game-frame {
             width: 100%;
-            height: 280px;
+            height: 240px;
             border: none;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -140,7 +166,7 @@
 
         .game-thumbnail {
             width: 100%;
-            height: 200px;
+            height: 160px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
@@ -232,21 +258,29 @@
             }
 
             .games-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                 gap: 15px;
+                justify-items: center;
             }
 
             .game-card {
-                height: 380px;
+                width: 280px;
+                min-height: 380px;
+                max-height: 480px;
             }
 
             .game-frame {
-                height: 220px;
+                height: 200px;
             }
 
             .game-thumbnail {
-                height: 140px;
+                height: 120px;
                 font-size: 2.5rem;
+            }
+
+            .game-description {
+                font-size: 0.85rem;
+                max-height: 100px;
             }
 
             .top-banner-ad {
@@ -273,8 +307,15 @@
                 font-size: 1rem;
             }
 
+            .games-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
             .game-card {
-                height: 340px;
+                width: 100%;
+                min-height: 340px;
+                max-height: 440px;
             }
 
             .game-frame {
@@ -282,8 +323,13 @@
             }
 
             .game-thumbnail {
-                height: 120px;
+                height: 100px;
                 font-size: 2rem;
+            }
+
+            .game-description {
+                font-size: 0.8rem;
+                max-height: 80px;
             }
 
             .play-button {
@@ -328,10 +374,11 @@
                         <h2 class="game-title">🔥 Monster Survivors</h2>
                     </div>
                     <div class="game-content">
-                        <p class="game-description">Survive endless waves of monsters in this fast-paced action game!</p>
+                        <p class="game-description">Experience the ultimate pro max survival challenge in Monster Survivors! This intense HTML5 action game tests your reflexes as you battle endless waves of terrifying monsters. Upgrade your weapons, collect power-ups, and compete for the highest score in this free 2025 gaming sensation. Perfect for adrenaline junkies seeking instant action without downloads. Play Monster Survivors online now and see how long you can last!</p>
                         <iframe src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html"
                                 class="game-frame"
-                                title="Monster Survivors Game"
+                                title="Monster Survivors Pro Max Game - Free HTML5 Action Game 2025"
+                                alt="Pro Max Monster Survivors action game for intense online survival battles - Free HTML5 gaming 2025"
                                 allowfullscreen
                                 loading="lazy"></iframe>
                     </div>
@@ -343,10 +390,11 @@
                         <h2 class="game-title">🧩 Sudoku Master</h2>
                     </div>
                     <div class="game-content">
-                        <p class="game-description">Challenge your mind with the classic Sudoku puzzle!</p>
+                        <p class="game-description">Master the ultimate pro max free Sudoku online 2025 experience! Our premium Sudoku puzzle game features unlimited carefully crafted grids that sharpen your logical thinking and memory skills. Whether you're a beginner or Sudoku expert, this best free brain training game adapts to your skill level with multiple difficulty options. Exercise your mind daily with this classic number puzzle that combines strategy and patience. No downloads required - play instant Sudoku online anywhere, anytime!</p>
                         <iframe src="https://htmlgames.com/game/Sudoku"
                                 class="game-frame"
-                                title="Sudoku Master Game"
+                                title="Sudoku Master Pro Max - Best Free Online Sudoku 2025"
+                                alt="Pro Max Sudoku Master game for strategic thinking and brain training - Free HTML5 sudoku 2025"
                                 allowfullscreen
                                 loading="lazy"></iframe>
                     </div>
@@ -358,10 +406,11 @@
                         <h2 class="game-title">🎯 Tetris Classic</h2>
                     </div>
                     <div class="game-content">
-                        <p class="game-description">The timeless block-stacking puzzle game!</p>
+                        <p class="game-description">Discover the best Tetris online 2025 pro max puzzle experience! This legendary block-stacking game returns with enhanced gameplay and stunning visuals. Master the art of tetromino placement while your reflexes and spatial awareness improve with each line cleared. Perfect for puzzle enthusiasts of all ages, this free HTML5 Tetris offers endless entertainment and cognitive benefits. Challenge yourself with increasing difficulty levels and compete for high scores. Play instantly online with no downloads!</p>
                         <iframe src="https://tetris.com/play-tetris"
                                 class="game-frame"
-                                title="Tetris Classic Game"
+                                title="Tetris Classic Pro Max - Best Free Tetris Online 2025"
+                                alt="Pro Max Tetris Classic puzzle game for block-stacking challenge - Tetris pro max online free"
                                 allowfullscreen
                                 loading="lazy"></iframe>
                     </div>
@@ -373,12 +422,14 @@
                         <h2 class="game-title">🐍 Snake Game</h2>
                     </div>
                     <div class="game-content">
-                        <p class="game-description">The legendary Snake game! Guide your snake and grow longer!</p>
-                        <div class="game-thumbnail">🐍</div>
+                        <p class="game-description">Return to classic gaming excellence with Snake Game pro max edition! This legendary arcade masterpiece challenges you to guide your snake through exciting mazes while collecting food to grow longer. Test your reflexes and strategic thinking as you avoid walls and your own tail. This free HTML5 version features smooth controls and progressive difficulty that keeps you engaged for hours. Perfect for nostalgic gamers and new players alike. Experience instant online gaming with no downloads required!</p>
+                        <div class="game-thumbnail" alt="Snake Game pro max icon for nostalgic arcade gaming - Snake game free online">🐍</div>
                         <div class="play-button-container">
                             <a href="https://playsnake.org/"
                                target="_blank"
                                rel="noopener noreferrer"
+                               alt="Play Snake Game pro max online for free - Classic snake game arcade experience"
+                               title="Play Snake Game Pro Max - Free Online Classic Arcade Game 2025"
                                class="play-button">🎮 Play Now</a>
                         </div>
                         <p class="new-tab-notice">Opens in new tab</p>
@@ -391,12 +442,14 @@
                         <h2 class="game-title">♠️ Solitaire</h2>
                     </div>
                     <div class="game-content">
-                        <p class="game-description">Classic card game perfection! Test your skills!</p>
-                        <div class="game-thumbnail">♠️</div>
+                        <p class="game-description">Immerse yourself in Solitaire pro max, the premium free card game experience for 2025! This timeless classic combines strategy, patience, and skill in one addictive package. Our HTML5 version features smooth gameplay, intuitive controls, and stunning card designs that make every hand enjoyable. Perfect for sharpening your mind during breaks or unwinding after a long day. Whether you're a seasoned player or new to card games, Solitaire offers endless entertainment with no downloads required. Start playing instantly online!</p>
+                        <div class="game-thumbnail" alt="Solitaire pro max card game icon for strategic thinking - Solitaire online pro free">♠️</div>
                         <div class="play-button-container">
                             <a href="https://www.crazygames.com/solitaire"
                                target="_blank"
                                rel="noopener noreferrer"
+                               alt="Play Solitaire pro max online for free - Premium solitaire online pro card game"
+                               title="Play Solitaire Pro Max - Free Premium Card Game Online 2025"
                                class="play-button">🎮 Play Now</a>
                         </div>
                         <p class="new-tab-notice">Opens in new tab</p>
@@ -410,12 +463,14 @@
                         <h2 class="game-title">♟️ Chess Online</h2>
                     </div>
                     <div class="game-content">
-                        <p class="game-description">The king of strategy games! Play chess against AI or friends!</p>
-                        <div class="game-thumbnail">♟️</div>
+                        <p class="game-description">Challenge yourself with Chess Online pro max, the ultimate free HTML5 chess experience for 2025! This classic strategy game offers endless intellectual challenges that improve critical thinking, pattern recognition, and strategic planning. Whether you're a grandmaster or learning the basics, our online chess platform provides the perfect arena to test your skills against AI opponents or real players worldwide. Enjoy smooth gameplay, elegant graphics, and instant access with no downloads required. Elevate your mind through the royal game of chess!</p>
+                        <div class="game-thumbnail" alt="Chess Online pro max icon for intellectual challenges - Pro max online games strategic">♟️</div>
                         <div class="play-button-container">
                             <a href="https://www.chess.com/play/online"
                                target="_blank"
                                rel="noopener noreferrer"
+                               alt="Play Chess Online pro max for free - Ultimate pro max online games strategic challenge"
+                               title="Play Chess Online Pro Max - Free Strategic Board Game 2025"
                                class="play-button">🎮 Play Now</a>
                         </div>
                         <p class="new-tab-notice">Opens in new tab</p>
@@ -441,7 +496,7 @@
         </div>
 
         <footer>
-            <p>&copy; 2024 Pro Max Online Games. All rights reserved.</p>
+            <p>&copy; 2025 Pro Max Games. All rights reserved.</p>
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="/terms">Terms of Service</a>
