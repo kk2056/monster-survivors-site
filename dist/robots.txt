@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap位置
+Sitemap: https://lrl99.github.io/game3.0/sitemap.xml
+
+# 禁止爬取的目录（如果有）
+# Disallow: /admin/
+# Disallow: /private/
+
+# 爬取延迟（可选）
+Crawl-delay: 1
